@@ -123,6 +123,7 @@
     <ClInclude Include="..\External\simdjson\singleheader\simdjson.h" />
     <ClInclude Include="ExternalModules\ExternalModules.h" />
     <ClInclude Include="GameModes\GhostCars.h" />
+    <ClInclude Include="GameModes\KingOfTheHill.h" />
     <ClInclude Include="Networking\MatchFileServer.h" />
     <ClInclude Include="Networking\RPNetCode.h" />
     <ClInclude Include="RPConfig.h" />
@@ -167,6 +168,7 @@
     <ClCompile Include="ExternalModules\ExternalModules.cpp" />
     <ClCompile Include="ExternalModules\RPTests.cpp" />
     <ClCompile Include="GameModes\GhostCars.cpp" />
+    <ClCompile Include="GameModes\KingOfTheHill.cpp" />
     <ClCompile Include="Networking\MatchFileServer.cpp" />
     <ClCompile Include="Networking\RPNetCode.cpp" />
     <ClCompile Include="RPConfig.cpp" />

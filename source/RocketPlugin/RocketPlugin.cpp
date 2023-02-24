@@ -14,6 +14,7 @@
 #include "GameModes/Zombies.h"
 #include "GameModes/BoostSteal.h"
 #include "GameModes/KeepAway.h"
+#include "GameModes/KingOfTheHill.h"
 #include "GameModes/Tag.h"
 #include "GameModes/Juggernaut.h"
 #include "GameModes/BoostMod.h"
@@ -957,6 +958,7 @@ void RocketPlugin::OnLoad()
 
     /* Init Game Modes */
     customGameModes.push_back(std::make_shared<Drainage>());
+    customGameModes.push_back(std::make_shared<KingOfTheHill>());
     customGameModes.push_back(std::make_shared<CrazyRumble>());
     customGameModes.push_back(std::make_shared<Zombies>());
     customGameModes.push_back(std::make_shared<BoostSteal>());

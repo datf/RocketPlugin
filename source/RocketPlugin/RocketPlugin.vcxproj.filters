@@ -165,6 +165,9 @@
     <ClInclude Include="..\External\ImGui\additions\imgui_stdlib.h">
       <Filter>External\ImGui\Additions</Filter>
     </ClInclude>
+    <ClInclude Include="GameModes\KingOfTheHill.h">
+      <Filter>GameModes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RocketPlugin.cpp">
@@ -292,6 +295,9 @@
     </ClCompile>
     <ClCompile Include="..\External\ImGui\additions\imgui_timeline.cpp">
       <Filter>External\ImGui\Additions</Filter>
+    </ClCompile>
+    <ClCompile Include="GameModes\KingOfTheHill.cpp">
+      <Filter>GameModes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

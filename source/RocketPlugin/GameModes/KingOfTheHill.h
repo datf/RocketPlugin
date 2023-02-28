@@ -14,6 +14,8 @@ public:
 
 private:
     void statEvent(ObjectWrapper caller, void* args);
-
+    void faceNextPlayer(int team);
+    void updateGamersQueue();
+    void updateGamersPlaying();
     int kothWins = 7;
 };

@@ -174,24 +174,23 @@ void KingOfTheHill::statEvent(ObjectWrapper obj, void* args) {
 }
 
 void KingOfTheHill::faceNextPlayer(int team) {
-    if (gamersQueue.size() <= 0) return;
     ServerWrapper sw = Outer()->GetGame();
     auto cars = sw.GetCars();
     bool changed = false;
-    int nextPlayer = gamersQueue.front();
-    for (auto c : cars) {
-        if (c.IsNull()) continue;
-        auto p = c.GetPRI();
-        if (p.IsNull()) continue;
-        if (p.GetPlayerID() != nextPlayer) continue;
-        p.ServerChangeTeam(team);
-        changed = true;
-    }
-    if (!changed) {
-        // TODO: Reindex and call this fn again, maybe?
-    }
-    else {
+    int nextPlayer;
+    while (!changed && gamersQueue.size() > 0) {
+        nextPlayer = gamersQueue.front();
+        for (auto c : cars) {
+            if (c.IsNull()) continue;
+            auto p = c.GetPRI();
+            if (p.IsNull()) continue;
+            if (p.GetPlayerID() != nextPlayer) continue;
+            p.ServerChangeTeam(team);
+            changed = true;
+        }
         gamersQueue.pop_front();
+    }
+    if (changed) {
         gamersPlaying.push_back(nextPlayer);
         rocketPlugin->cvarManager->log("New gamersPlaying PID: " + std::to_string(nextPlayer));
     }
